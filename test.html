@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+<div id="app" v-bind:title="messagetitle" v-if="seen">
+	{{message}}
+	<ul>
+		<li v-for="too in tools">
+			{{too.text}}
+		</li>
+	</ul>
+</div>
+<dl>
+	<dt>A</dt>
+	<dd>a</dd>
+	<dt>B</dt>
+	<dd>b</dd>
+	<dd>b</dd>
+</dl>
+<script type="text/javascript">
+	var app = new Vue({
+		el: '#app',
+		data: {
+			message: 'Hello vue!',
+			messagetitle: '页面加载于' + new Date().toLocaleString(),
+			seen: true,
+			tools: [{
+				text: '学习JS'
+			},{
+				text: '学习HTML'
+			},{
+				text: '学习CSS'
+			}]
+		}
+	});
+</script>
+</body>
+</html>
